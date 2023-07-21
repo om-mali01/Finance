@@ -38,4 +38,4 @@ if expenses < income:
         print(f"Total bucket amount: {bucket_total}")
         print(f"Total remaining amount is {remaining_total}")
 else:
-    print("Invalide")
+    print("Invalid")
