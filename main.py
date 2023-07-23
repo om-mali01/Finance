@@ -19,9 +19,9 @@ def bucket_info(remaining_amount):
     Allocating money to bucket
     """
     bucket_total = 0
-    bucket = {}
+    bucket:dict = {}
     choice = input("\nDo you want to allocate some money to other things (yes/no): ")
-    if choice == "yes":
+    if choice in ["yes","YES","Y","y"]:
         while True:
             name = input("\nEnter the name or exit: ")
             if name == "exit":
@@ -67,7 +67,7 @@ def main():
         bucket, bucket_total = bucket_info(remaining_amount)
         print_info(month, income, expenses, remaining_amount, bucket, bucket_total)
     else:
-        print("Invalide")
+        print("Invalid")
 
 
 if __name__ == "__main__":
