@@ -2,7 +2,6 @@
     Finance Mananger system
 """
 
-
 def input_info():
     """
     Taking input from user
