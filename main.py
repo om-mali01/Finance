@@ -1,6 +1,21 @@
 """
     Finance Mananger system
 """
+import json
+
+def save_data(data, filename):
+    '''To save the data'''
+    with open(filename, 'w') as file:
+        json.dump(data, file, indent=4)
+
+def load_data(filename):
+    '''To load data in the files'''
+    try:
+        with open(filename, 'r') as file:
+            data = json.load(file)
+        return data
+    except FileNotFoundError:
+        return {}
 
 def input_info():
     """
@@ -58,16 +73,55 @@ def print_info(month, income, expenses, remaining_amount, bucket, bucket_total):
 
 
 def main():
-    "This is main"
+    '''main'''
     month, income, expenses = input_info()
 
     if income < expenses:
         return print("Invalid")
+    
     remaining_amount = income - expenses
     print(f"Your remaining amount is {remaining_amount}")
-    bucket, bucket_total = bucket_info(remaining_amount)
-    print_info(month, income, expenses, remaining_amount, bucket, bucket_total)
 
+    filename = "finance_data.json"
+    data = load_data(filename)
+    
+    if month in data:
+        existing_data = data[month]
+        choice = input("\nThis month is already added !!! Do you want to update the data? (y/n): ")
+        if choice in ['y','yes','Yes',"YES"]:
+            existing_data = data[month]
+            existing_income = existing_data['income']
+            existing_expenses = existing_data['expenses']
+            
+            # Check if the existing income and expenses match the new input
+            if existing_income == income and existing_expenses == expenses:
+                print("Data for this month already exists and is up to date.")
+            else:
+                print("Updating existing data for this month.")
+                data[month]['income'] = income
+                data[month]['expenses'] = expenses
+                remaining_amount = income - expenses
+                data[month]['remaining_amount'] = remaining_amount
+                bucket, bucket_total = bucket_info(remaining_amount)
+                data[month]['bucket'] = bucket
+                data[month]['bucket_total'] = bucket_total
+                save_data(data, filename)
+                print_info(month, income, expenses, remaining_amount, data[month]['bucket'], data[month]['bucket_total'])
+        else:
+            print_info(month, existing_data['income'], existing_data['expenses'], existing_data['remaining_amount'], existing_data['bucket'], existing_data['bucket_total'])
+    else:
+        remaining_amount = income - expenses
+        bucket, bucket_total = bucket_info(remaining_amount)
+        data[month] = {
+                'month' : month,
+                'income' : income,
+                'expenses' : expenses,
+                'remaining_amount':remaining_amount,
+                'bucket':bucket,
+                'bucket_total':bucket_total
+        }
+        save_data(data, filename)
+        print_info(month, income, expenses, remaining_amount, bucket, bucket_total)
 
 if __name__ == "__main__":
     main()
