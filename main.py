@@ -105,6 +105,7 @@ def main():
                 bucket, bucket_total = bucket_info(remaining_amount)
                 data[month]['bucket'] = bucket
                 data[month]['bucket_total'] = bucket_total
+                data[month]['Gross Saved'] = remaining_amount - bucket_total
                 save_data(data, filename)
                 print_info(month, income, expenses, remaining_amount, data[month]['bucket'], data[month]['bucket_total'])
         else:
