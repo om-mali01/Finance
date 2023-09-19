@@ -1,31 +1,40 @@
 {
     "july": {
         "month": "july",
-        "income": 200,
-        "expenses": 140,
-        "remaining_amount": 60,
+        "income": 20000,
+        "expenses": 1000,
+        "remaining_amount": 19000,
         "bucket": {
-            "emi": 10
+            "emi": 2000,
+            "car loan": 3000
         },
-        "bucket_total": 10
+        "bucket_total": 5000,
+        "Gross Saved": 14000
     },
     "jan": {
         "month": "jan",
-        "income": 200,
-        "expenses": 120,
-        "remaining_amount": 80,
-        "bucket": {},
-        "bucket_total": 0
+        "income": 10000000,
+        "expenses": 20000,
+        "remaining_amount": 9980000,
+        "bucket": {
+            "emi": 2000,
+            "car loan": 30000,
+            "home loan": 400000
+        },
+        "bucket_total": 432000,
+        "Gross Saved": 9548000
     },
     "feb": {
         "month": "feb",
-        "income": 5000,
-        "expenses": 100,
-        "remaining_amount": 4900,
+        "income": 100,
+        "expenses": 20,
+        "remaining_amount": 80,
         "bucket": {
-            "car loan": 200
+            "petrol": 20,
+            "mobile recharge": 10
         },
-        "bucket_total": 200
+        "bucket_total": 30,
+        "Gross Saved": 50
     },
     "march": {
         "month": "march",
