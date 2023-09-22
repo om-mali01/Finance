@@ -13,49 +13,34 @@
     },
     "jan": {
         "month": "jan",
-        "income": 10000000,
-        "expenses": 20000,
-        "remaining_amount": 9980000,
+        "income": 200,
+        "expenses": 100,
+        "remaining_amount": 100,
         "bucket": {
-            "emi": 2000,
-            "car loan": 30000,
-            "home loan": 400000
+            "emi": 30
         },
-        "bucket_total": 432000,
-        "Gross Saved": 9548000
+        "bucket_total": 30,
+        "Gross Saved": 70
     },
     "feb": {
         "month": "feb",
-        "income": 100,
-        "expenses": 20,
-        "remaining_amount": 80,
-        "bucket": {
-            "petrol": 20,
-            "mobile recharge": 10
-        },
-        "bucket_total": 30,
-        "Gross Saved": 50
+        "income": 500,
+        "expenses": 100,
+        "remaining_amount": 400,
+        "bucket": {},
+        "bucket_total": 0,
+        "Gross Saved": 400
     },
     "march": {
         "month": "march",
-        "income": 2000,
-        "expenses": 100,
-        "remaining_amount": 1900,
+        "income": 1000,
+        "expenses": 200,
+        "remaining_amount": 800,
         "bucket": {
-            "mobile recharge": 150,
-            "petrol": 100
+            "emi": 100,
+            "home loan": 120
         },
-        "bucket_total": 250
-    },
-    "jun": {
-        "month": "jun",
-        "income": 30000,
-        "expenses": 3000,
-        "remaining_amount": 27000,
-        "bucket": {
-            "bike loan": 600,
-            "car loan": 3000
-        },
-        "bucket_total": 3600
+        "bucket_total": 220,
+        "Gross Saved": 580
     }
 }

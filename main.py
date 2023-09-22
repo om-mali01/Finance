@@ -3,6 +3,12 @@
 """
 import json
 
+def data_year(data):
+    total_saving = 0
+    for saving in data.values():
+        total_saving += saving.get("Gross Saved",0)
+    print(f"Your total saving in this year is {total_saving}\n")
+
 def save_data(data, filename):
     '''To save the data'''
     with open(filename, 'w') as file:
@@ -108,8 +114,10 @@ def main():
                 data[month]['Gross Saved'] = remaining_amount - bucket_total
                 save_data(data, filename)
                 print_info(month, income, expenses, remaining_amount, data[month]['bucket'], data[month]['bucket_total'])
+                data_year(data)
         else:
             print_info(month, existing_data['income'], existing_data['expenses'], existing_data['remaining_amount'], existing_data['bucket'], existing_data['bucket_total'])
+            data_year(data)
     else:
         remaining_amount = income - expenses
         bucket, bucket_total = bucket_info(remaining_amount)
@@ -119,10 +127,12 @@ def main():
                 'expenses' : expenses,
                 'remaining_amount':remaining_amount,
                 'bucket':bucket,
-                'bucket_total':bucket_total
+                'bucket_total':bucket_total,
+                'Gross Saved':remaining_amount - bucket_total
         }
         save_data(data, filename)
         print_info(month, income, expenses, remaining_amount, bucket, bucket_total)
+        data_year(data)
 
 if __name__ == "__main__":
     main()
