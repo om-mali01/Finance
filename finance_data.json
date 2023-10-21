@@ -42,5 +42,27 @@
         },
         "bucket_total": 220,
         "Gross Saved": 580
+    },
+    "october": {
+        "month": "october",
+        "income": 10000,
+        "expenses": 3000,
+        "remaining_amount": 7000,
+        "bucket": {
+            "food": 1000
+        },
+        "bucket_total": 1000,
+        "Gross Saved": 6000
+    },
+    "November": {
+        "month": "November",
+        "income": 2000,
+        "expenses": 100,
+        "remaining_amount": 1900,
+        "bucket": {
+            "home expenses": 400
+        },
+        "bucket_total": 400,
+        "Gross Saved": 1500
     }
 }
